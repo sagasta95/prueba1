@@ -1,0 +1,3 @@
+Aitor_hola_mundo:
+    path: /hola
+    defaults: { _controller: AitorHolaMundoBundle:Default:index}

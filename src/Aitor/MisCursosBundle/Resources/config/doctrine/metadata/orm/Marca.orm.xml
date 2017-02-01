@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Marca" table="Marca">
+    <id name="cifmarca" type="string" column="CifMarca" length="4">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nombre" type="string" column="Nombre" length="20" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="ciudad" type="string" column="Ciudad" length="25" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <many-to-many field="codcoche" target-entity="Coche" inversed-by="cifmarca" fetch="LAZY">
+      <join-table name="marco">
+        <join-columns>
+          <join-column name="CifMarca" referenced-column-name="CifMarca"/>
+        </join-columns>
+        <inverse-join-columns>
+          <join-column name="CodCoche" referenced-column-name="CodCoche"/>
+        </inverse-join-columns>
+      </join-table>
+    </many-to-many>
+  </entity>
+</doctrine-mapping>

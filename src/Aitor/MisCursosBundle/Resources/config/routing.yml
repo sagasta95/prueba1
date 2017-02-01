@@ -1,0 +1,41 @@
+aitor_mis_cursos_homepage:
+    path:     /
+    defaults: { _controller: AitorMisCursosBundle:Default:index }
+
+aitor_mis_cursos_mostrar:
+    path:     /mostrar/{id}
+    defaults: { _controller: AitorMisCursosBundle:Default:mostrar }
+
+aitor_mis_cursos_crear:
+    path:     /crear/{id}
+    defaults: { _controller: AitorMisCursosBundle:Default:crear }
+    requirements: {_method: post}
+
+aitor_mis_cursos_nuevo:
+    path:     /nuevo
+    defaults: { _controller: AitorMisCursosBundle:Default:nuevo }
+
+insertar:
+  path:     /insertar/{nombre}/{apellido}/{edad}
+  defaults: { _controller: AitorMisCursosBundle:Default:insertar }
+  requirements: {_method: post}
+
+insertar:
+  path:     /insert
+  defaults: { _controller: AitorMisCursosBundle:Default:insert}
+  requirements: {_method: post}
+
+
+aitor_mis_cursos_editar:
+    path:     /editar/{id}
+    defaults: { _controller: AitorMisCursosBundle:Default:editar }
+
+aitor_mis_cursos_actualizar:
+    path:     /actualizar/{id}
+    defaults: { _controller: AitorMisCursosBundle:Default:actualizar }
+    requirements: {_method: post|put}
+
+aitor_mis_cursos_eliminar:
+    path:     /eliminar/{id}
+    defaults: { _controller: AitorMisCursosBundle:Default:eliminar }
+    requirements: {_method: post|delete}

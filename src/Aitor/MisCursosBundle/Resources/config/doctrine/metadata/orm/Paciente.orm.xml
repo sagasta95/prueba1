@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Paciente" table="Paciente">
+    <unique-constraints>
+      <unique-constraint name="UQ__Paciente__E33EDA7CACCD4736" columns="NumSS"/>
+    </unique-constraints>
+    <id name="idpaciente" type="integer" column="IdPaciente">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="numss" type="string" column="NumSS" length="20" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="nombre" type="string" column="Nombre" length="40" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="apellido" type="string" column="Apellido" length="60" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fnacimiento" type="date" column="FNacimiento" nullable="false"/>
+    <field name="genero" type="boolean" column="Genero" nullable="false"/>
+  </entity>
+</doctrine-mapping>

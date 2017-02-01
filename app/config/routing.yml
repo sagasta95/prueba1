@@ -1,0 +1,11 @@
+aitor_mis_cursos:
+    resource: "@AitorMisCursosBundle/Resources/config/routing.yml"
+    prefix:   /
+
+aitor_hola_mundo:
+    resource: "@AitorHolaMundoBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

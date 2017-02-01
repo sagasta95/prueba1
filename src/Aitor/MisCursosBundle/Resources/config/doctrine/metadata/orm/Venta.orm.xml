@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Venta" table="Venta">
+    <indexes>
+      <index name="IDX_4E26C15147C263DB" columns="Dni"/>
+      <index name="IDX_4E26C1518AD0AFEA" columns="CodCoche"/>
+      <index name="IDX_4E26C1514FE47143" columns="CifConce"/>
+    </indexes>
+    <id name="dni" association-key="true"/>
+    <id name="codcoche" association-key="true"/>
+    <id name="cifconce" association-key="true"/>
+    <field name="color" type="string" column="Color" length="12" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="pvp" type="integer" column="Pvp" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <one-to-one field="dni" target-entity="Cliente" fetch="LAZY">
+      <join-columns>
+        <join-column name="Dni" referenced-column-name="Dni"/>
+      </join-columns>
+    </one-to-one>
+    <one-to-one field="codcoche" target-entity="Coche" fetch="LAZY">
+      <join-columns>
+        <join-column name="CodCoche" referenced-column-name="CodCoche"/>
+      </join-columns>
+    </one-to-one>
+    <one-to-one field="cifconce" target-entity="Concesionario" fetch="LAZY">
+      <join-columns>
+        <join-column name="CifConce" referenced-column-name="CifConce"/>
+      </join-columns>
+    </one-to-one>
+  </entity>
+</doctrine-mapping>
