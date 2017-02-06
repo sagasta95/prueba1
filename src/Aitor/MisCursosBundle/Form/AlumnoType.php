@@ -19,7 +19,7 @@ class AlumnoType extends AbstractType
           ->add('nombre', TextType::class)
           ->add('apellidos', TextType::class)
           ->add('edad', TextType::class)
-          ->add('crear', SubmitType::class)
+          ->add('crear', SubmitType::class, array('label'=>"Crear Alumno"));
           ;
     }
 

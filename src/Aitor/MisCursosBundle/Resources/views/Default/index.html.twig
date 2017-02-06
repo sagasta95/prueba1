@@ -1,1 +1,14 @@
-Vista de mis cursos!
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h2>Listado de alumnos</h2>
+    <ul>
+        {% for alumno in alumnos %}
+            <li> {{alumno.nombre}}
+                <a href="{{path('aitor_mis_cursos_mostrar', {'id': alumno.id})}}">Ver Mas</a>
+                <a href="{{path('aitor_mis_cursos_editar', {'id': alumno.id})}}">Editar</a>
+                <a href="{{path('aitor_mis_cursos_eliminar', {'id': alumno.id})}}">Eliminar</a>
+            </li>
+        {% endfor %}
+    </ul>
+        <a href="{{path('aitor_mis_cursos_nuevo')}}"><button>Nuevo Alumno</button></a>
+{% endblock %}

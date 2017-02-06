@@ -1,1 +1,8 @@
-Vista para mostrar cursos!
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h2>Alumno: {{alumno.id}}</h2>
+    <p>Nombre: {{alumno.nombre}}</p>
+    <p>Apellidos: {{alumno.apellidos}}</p>
+    <p>Edad: {{alumno.edad}}</p>
+     <a href="{{path('aitor_mis_cursos_homepage')}}">Volver</a>
+{% endblock %}

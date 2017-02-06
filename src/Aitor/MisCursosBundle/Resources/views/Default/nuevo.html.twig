@@ -1,2 +1,5 @@
-{{form_start(form, {'action':'/insert', 'method':'POST'})}}
-{{form_end(form)}}
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h2>Nuevo Curso</h2>
+{{form(form, {attr: {novalidate: 'novalidate'}})}}
+{% endblock %}

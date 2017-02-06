@@ -1,1 +1,7 @@
-Vista para editar cursos!
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h2>Editor de cursos</h2>
+{{form(form)}}
+    <a href="{{path('aitor_mis_cursos_homepage')}}">Volver al listado</a>
+
+{% endblock %}
